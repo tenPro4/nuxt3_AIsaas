@@ -1,75 +1,30 @@
-# Nuxt 3 Minimal Starter
-
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
-
-## Setup
-
-Make sure to install the dependencies:
-
-```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
+## Startup
+```
+npx nuxi@latest init <project-name>
+npm install @nuxtjs/supabase @supabase/auth-ui-shared @nuxtbase/auth-ui-vue -D
 ```
 
-## Development Server
+Install prisma(Postgres)
+```
+npm i prisma -D
+npx prisma init
 
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
+## Key Feature
+- [Shadcn UI](https://www.shadcn-vue.com/docs/installation/nuxt.html)
+- [Auth UI](https://github.com/nuxtbase/auth-ui-vue)
+- [Superbase](https://supabase.com/). Check out the [documentation](https://supabase.nuxtjs.org/get-started) for Nuxt3 environment.
+- [OpenAi](https://openai.com/)
+- [Repicate](https://replicate.com/) : audio and video library
+- [Stripe](https://stripe.com/en-my)
+- [Crisp](https://crisp.chat/en/) Central of manage online conversation | online help desk
 
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
+## Notes
+- utils(index.ts) path dont need to import(Need build first)
+- await refreshNuxtData('userData')
+```vue
+const { data: user, pending } = await useFetch('/api/user', {
+  key: 'userData',
+});
 ```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
